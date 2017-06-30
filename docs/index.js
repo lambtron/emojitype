@@ -7,7 +7,26 @@ document.getElementById('input').addEventListener('keyup', function(e) {
   document.getElementById('output').innerText = translate(this.value);
 });
 
-var clipboard = new Clipboard('.button');
+// var clipboard = new Clipboard('.button');
+
+/**
+ * Copy to clipboard.
+ */
+
+document.getElementById('copy').addEventListener('click', function(e) {
+  copyStringToClipboard(translate(document.getElementById('input').value))
+});
+
+function copyStringToClipboard(string) {
+  function handler(event){
+    event.clipboardData.setData('text/plain', string);
+    event.preventDefault();
+    document.removeEventListener('copy', handler, true);
+  }
+
+  document.addEventListener('copy', handler, true);
+  document.execCommand('copy');
+}
 
 /**
  * Dictionary of letters to emojis.
@@ -61,7 +80,7 @@ function translate(input) {
   var output = '';
   for (var i = 0; i < input.length; i++) {
     if (input[i] != ' ') output += emoji(dictionary[input[i]]());
-    else output += '   ';
+    else output += '        ';
   }
   return output;
 }
