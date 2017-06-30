@@ -1,0 +1,31 @@
+<html>
+<head>
+  <title>emojitype</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tachyons/4.7.4/tachyons.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.7.1/clipboard.min.js"></script>
+</head>
+<body class="sans-serif">
+  <div class="pt6 pb4">
+    <div class="mw6 mw7-ns center ph5-ns tc">
+      <img class="" src="emojitype.gif" alt="emojitype">
+    </div>
+  </div>
+
+  <div class="center mw5 mw6-ns br3 hidden mv4">
+    <form class="black-80">
+      <div>
+        <label for="comment" class="f6 b db mb2">Write your message here</span></label>
+        <textarea id="input" name="comment" class="db border-box hover-black w-100 measure ba b--black-20 pa2 br2 mb2"></textarea>
+      </div>
+    </form>
+  </div>
+  <article class="bg-light-gray center mw5 mw6-ns br3 hidden mv4">
+    <div class="pa4">
+      <p id="output" class="f6 f5-ns lh-copy measure">
+      </p>
+      <a class="button f6 link dim br-pill ba ph3 pv2 mb2 dib black" data-clipboard-target="#output" href="#0">Copy</a>
+    </div>
+  </article>
+  <script type="text/javascript" src="index.js"></script>
+</body>
+</html>
