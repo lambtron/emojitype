@@ -15,6 +15,10 @@ document.getElementById('copy').addEventListener('click', function(e) {
   copyStringToClipboard(translate(document.getElementById('input').value))
 });
 
+/**
+ * Copy string to clipboard.
+ */
+
 function copyStringToClipboard(string) {
   function handler(event){
     event.clipboardData.setData('text/plain', string);
