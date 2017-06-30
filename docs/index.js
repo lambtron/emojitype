@@ -7,8 +7,6 @@ document.getElementById('input').addEventListener('keyup', function(e) {
   document.getElementById('output').innerText = translate(this.value);
 });
 
-// var clipboard = new Clipboard('.button');
-
 /**
  * Copy to clipboard.
  */
